@@ -1,10 +1,12 @@
-import { combineReducers } from 'redux-immutable';
+import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router/immutable';
+import { History } from 'history';
 import users from './users';
 import route from './route';
 
-export default function createReducer() {
+export default function createReducer(history: History) {
     return combineReducers({
-        users: users,
-        route: route
+        router: connectRouter(history),
+        users: users
     });
 }

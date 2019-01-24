@@ -4,12 +4,10 @@ import './index.css';
 import { App } from './App';
 import registerServiceWorker from './registerServiceWorker';
 import 'react-app-polyfill/ie11';
-import createHistory from 'history/createBrowserHistory';
-import configureStore from './configureStore';
+import configureStore, { history } from './configureStore';
 import { Provider } from 'react-redux';
 
-const history = createHistory();
-const store = configureStore(history);
+const store = configureStore();
 
 const app = (
     <Provider store={store}>

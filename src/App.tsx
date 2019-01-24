@@ -1,8 +1,8 @@
 import React, { Component, ReactNode } from 'react';
 
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
-import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router/immutable';
+import { Route, Switch } from 'react-router';
 import logo from './logo.svg';
 import './App.css';
 import { List } from './components/PoolList';
