@@ -7,6 +7,7 @@ import route from './route';
 export default function createReducer(history: History) {
     return combineReducers({
         router: connectRouter(history),
-        users: users
+        users: users,
+        route: route
     });
 }
