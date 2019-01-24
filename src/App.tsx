@@ -1,28 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
+
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
+import { Route, Switch } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import { List } from './components/PoolList';
 
-class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
-                </header>
-            </div>
-        );
-    }
+// Any additional component props go here.
+interface OwnProps {
+    store: any;
+    history: any;
+    children?: ReactNode;
 }
+
+const Routes: React.SFC = () => (
+    <Switch>
+        <Route exact path="/" component={() => <div>Home Page</div>} />
+        <Route component={() => <div>Not Found</div>} />
+    </Switch>
+);
+
+const App: React.StatelessComponent<OwnProps> = props => {
+    debugger;
+    return (
+        <Provider store={props.store}>
+            <ConnectedRouter history={props.history}>
+                <Routes />
+            </ConnectedRouter>
+        </Provider>
+    );
+};
 
 export default App;
