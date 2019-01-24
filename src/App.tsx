@@ -6,6 +6,8 @@ import { Route, Switch } from 'react-router';
 import logo from './logo.svg';
 import './App.css';
 import { List } from './components/PoolList';
+import Home from './containers/Home';
+import Users from './containers/Users';
 
 // Any additional component props go here.
 interface OwnProps {
@@ -16,8 +18,8 @@ interface OwnProps {
 const router = (history: any) => (
     <ConnectedRouter history={history}>
         <Switch>
-            <Route exact path="/" component={() => <div>Home Page</div>} />
-            <Route component={() => <div>Not Found</div>} />
+            <Route exact path="/" component={Home} />
+            <Route component={Users} />
         </Switch>
     </ConnectedRouter>
 );

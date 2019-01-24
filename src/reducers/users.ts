@@ -9,9 +9,9 @@ const initialState = fromJS({
 const users = (state = initialState, action: any) => {
     switch (action.type) {
         case SET_USER_POOLS:
-            return state.set('userPools', action.data.userPools);
+            return state.set('userPools', fromJS(action.data.userPools));
         case SET_USERS:
-            return state.set('users', action.data.users);
+            return state.set('users', fromJS(action.data.Users));
         default:
             return state;
     }

@@ -146,7 +146,7 @@ const cognito = () => {
          * @param {String} paginationToken
          * @returns {Promise} Promise wrapping the listUsers call
          */
-        getUsersForPool(poolId, limit = 1, paginationToken = '') {
+        getUsersForPool(poolId, limit = 60, paginationToken = '') {
             return new Promise((resolve, reject) => {
                 if (cognitoidentityserviceprovider == null) {
                     console.error(chalk.red('Cognito was not initialized'));

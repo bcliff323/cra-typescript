@@ -29,9 +29,7 @@ export function* watchRouteChange() {
                 const users = yield call(api.getUsersInPool, qs.poolId);
                 yield put({
                     type: SET_USERS,
-                    data: {
-                        users: users.data
-                    }
+                    data: users.data
                 });
                 break;
             default:
